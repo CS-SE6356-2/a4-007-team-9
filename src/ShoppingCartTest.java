@@ -74,7 +74,7 @@ class ShoppingCartTest {
 		boolean thrown = false;
 		ShoppingCart cart = new ShoppingCart();
 		
-		Product milk = new Product("milk", 2);
+		Product milk = new Product("milk",  2);
 		
 		cart.addItem(milk);
 		cart.empty();
@@ -87,4 +87,3 @@ class ShoppingCartTest {
 		
 		assertTrue(thrown);
 		
-	}
