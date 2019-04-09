@@ -69,4 +69,23 @@ class ShoppingCartTest {
 		assertEquals(bread.getPrice(), afterBalance - balance);
 	}
 
+	@Test
+	void ProductNotfound() { //checks to make sure item being removed is in cart
+		boolean thrown = false;
+		ShoppingCart cart = new ShoppingCart();
+		
+		Product milk = new Product("milk", 2);
+		
+		cart.addItem(milk);
+		cart.empty();
+		
+		try {
+			cart.removeItem(milk);
+		} catch (ProductNotFoundException e) {
+			thrown = true;
+		}
+		
+		assertTrue(thrown);
+		
+	}
 }
