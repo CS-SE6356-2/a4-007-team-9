@@ -70,3 +70,29 @@ class ShoppingCartTest {
 	}
 
 }
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Test;
+
+class CheckcartTest {
+
+	@test
+	static void tearDownAfterClass() throws Exception {
+	}
+
+	@Test
+	void Productnotfound() { //checks to make sure item being removed is in cart
+		CheckcartTest product = new CheckcartTest();
+		Product milk = new Product("milk", 2,50);
+		
+		CheckcartTest.additem(milk);
+		CheckcartTest.empty();
+		
+		int ProductnotFound = CheckcartTest.getProductnotfound();
+		assertEquals(0, Productnotfound);
+		
+		
+	}
+
+}
