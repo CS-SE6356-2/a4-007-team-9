@@ -88,4 +88,3 @@ class ShoppingCartTest {
 		assertTrue(thrown);
 		
 	}
-}
