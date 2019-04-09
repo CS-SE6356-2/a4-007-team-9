@@ -38,4 +38,20 @@ class ShoppingCartTest {
 		
 		assertEquals(1, itemCountAfter - itemCountBefore);
 	}
+	
+	@Test
+	void productdecrementTest() throws ProductNotFoundException {
+		ShoppingCart Cart = new ShoppingCart();
+		Product corn = new Product("Corn", 5.98);
+		
+		Cart.addItem(corn);
+		Cart.addItem(corn);
+		
+		int AfterCounter = Cart.getItemCount();
+		
+		Cart.removeItem(corn);
+		
+		assertEquals(1, AfterCounter-Cart.getItemCount());
+		
+	}
 }
